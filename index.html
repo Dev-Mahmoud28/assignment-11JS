@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body class="min-vh-100">
+    <div class="header py-5">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg ">
+          <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center text-white" href="#">
+              <img src="imgs/logo@2x.png" alt="logo" class="w-25" />
+              <div class="tagline ms-2">
+                <h6 class="m-1">Weather</h6>
+                <span class="m-1">tagline goes here</span>
+              </div>
+            </a>
+            <button
+              class="navbar-toggler bg-primary"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div
+              class="collapse navbar-collapse ms-auto flex-grow-0"
+              id="navbarSupportedContent"
+            >
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                <li class="nav-item mb-sm-2 mb-lg-0">
+                  <a class="nav-link rounded-pill py-1 px-3 text-white active" aria-current="page" href="#"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item mb-sm-2 mb-lg-0 ms-lg-3">
+                  <a class="nav-link rounded-pill py-1 px-3 text-white" href="#">News</a>
+                </li>
+                <li class="nav-item mb-sm-2 mb-lg-0 ms-lg-3">
+                  <a class="nav-link rounded-pill py-1 px-3 text-white" href="#">Live Cameras</a>
+                </li>
+                <li class="nav-item mb-sm-2 mb-lg-0 ms-lg-3">
+                  <a class="nav-link rounded-pill py-1 px-3 text-white" href="#">Photos</a>
+                </li>
+                <li class="nav-item ms-lg-3">
+                  <a class="nav-link rounded-pill py-1 px-3 text-white" href="#">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div
+      class="main-section py-5 d-flex justify-content-center align-items-center justify-content-between"
+    >
+      <div class="container">
+        <div class="search d-flex align-items-center position-relative">
+          <input
+            type="search"
+            name="search"
+            id="searchInput"
+            placeholder="Find Your Location..."
+            class="search w-100 p-3"
+          />
+          <button
+            id="find"
+            class="find btn btn-primary position-absolute rounded-pill"
+          >
+            Find
+          </button>
+        </div>
+        <div id="cards" class="box mt-5">
+          <div class="row">
+            <div class="col-md-4 today p-0">
+              <div class="head d-flex align-items-center px-2 py-1">
+                <span id="currentDay"></span>
+                <span id="dayOfMonth" class="ms-auto"></span>
+                <span id="month"> </span>
+              </div>
+              <h5 class="city mx-3 my-4"></h5>
+              <h2 id="tempOne" class="temp mx-3 display-1 fw-bold"></h2>
+              <div class="icon mx-2">
+                <img id="icon-1" src="" alt="condition" class="w-25 d-block" />
+                <span id="condition" class="condition"></span>
+              </div>
+              <div class="foot m-3">
+                <span id="humidity"></span>
+                <span id="wind" class="ms-3"
+                  >
+                </span>
+                <span id="windDir" class="ms-3"
+                  ></span
+                >
+              </div>
+            </div>
+            <div class="col-md-4 two-days p-0 text-center">
+              <div class="sec-head">
+                <p id="secDay" class="px-2 py-1"></p>
+              </div>
+              <div class="sec-icon mt-5 mb-4">
+                <img
+                  id="iconTwo"
+                  src=""
+                  alt="condition"
+                  class="w-25 d-block m-auto"
+                />
+              </div>
+              <div class="temp">
+                <h3 id="tempTwo"></h3>
+                <span id="minTempTwo" class="text-secondary"></span>
+              </div>
+              <div class="stat">
+                <span id="conditionTwo" class="d-block mt-3"></span>
+              </div>
+            </div>
+            <div class="col-md-4 two-days third p-0 text-center">
+              <div class="third-head">
+                <p id="dayThree" class="px-2 py-1"></p>
+              </div>
+              <div class="third-icon mt-5 mb-4">
+                <img
+                  id="iconThree"
+                  src=""
+                  alt="condition"
+                  class="w-25 d-block m-auto"
+                />
+              </div>
+              <div class="temp">
+                <h3 id="tempThree">23.2C</h3>
+                <span id="minTempThree" class="text-secondary"></span>
+              </div>
+              <div class="stat">
+                <span id="conditionThree" class="d-block mt-3"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer pt-5 pb-4">
+      <div class="container">
+        <div
+          class="input d-flex align-items-center justify-content-between position-relative"
+        >
+          <input
+            class="email d-block p-3"
+            type="email"
+            name="email"
+            placeholder="Enter Your Email To Subscibe..."
+          />
+          <button
+            class="subscribe btn btn-primary position-absolute rounded-pill"
+          >
+            Subscribe
+          </button>
+          <div class="icons d-flex align-items-center">
+            <a
+              href="#"
+              class="d-block p-2 rounded-circle d-flex align-items-center justify-content-center fs-5"
+              ><i class="fa-brands fa-facebook"></i
+            ></a>
+            <a
+              href="#"
+              class="d-block ms-3 p-2 rounded-circle d-flex align-items-center justify-content-center fs-5"
+              ><i class="fa-brands fa-twitter"></i
+            ></a>
+            <a
+              href="#"
+              class="d-block ms-3 p-2 rounded-circle d-flex align-items-center justify-content-center fs-5"
+              ><i class="fa-brands fa-google-plus"></i
+            ></a>
+            <a
+              href="#"
+              class="d-block ms-3 p-2 rounded-circle d-flex align-items-center justify-content-center fs-5"
+              ><i class="fa-brands fa-pinterest"></i
+            ></a>
+          </div>
+        </div>
+        <p class="copy mt-4">
+          Copyright 2024 Route. Designed by Mahmoud. All rights reserved
+        </p>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
